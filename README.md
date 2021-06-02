@@ -135,6 +135,10 @@ QEMU で起動するには `./build.sh` に `run` オプションを指定。
 
     ~/edk2$ ../osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi
 
+カーネルを含めたビルド
+
+     ~/edk2$ ../osbook/devenv/run_qemu.sh Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi $HOME/EUFI-OS/kernel/kernel.elf
+
 apps ディレクトリにアプリ群を入れ、フォントなどのリソースをも含めたディスクイメージを作るには APPS_DIR と RESOURCE_DIR 変数を指定。
 
     $ APPS_DIR=apps RESOURCE_DIR=resource ./build.sh run
