@@ -56,7 +56,7 @@ Ansible を使ってセットアップを行うと楽。
     x86_64-elf/include/
         c++/ を除くすべて
 
-次のファイル群は libc++ 由来です。ライセンスは `x86_64-elf/LICENSE.libcxx` を参照。
+次のファイル群は libc++ 由来。ライセンスは `x86_64-elf/LICENSE.libcxx` を参照。
 
     x86_64-elf/lib/
         libc++.a
