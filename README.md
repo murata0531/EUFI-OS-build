@@ -21,7 +21,7 @@ Ubuntu 20.04(Virtual Box上)
     $ sudo apt update
     $ sudo apt install git
     $ cd $HOME
-    $ git clone https://github.com/murata0531/EUFI-OS-build.git　osbook
+    $ git clone https://github.com/murata0531/UEFI-OS-build.git　osbook
 
 ### 開発ツールの導入
 
@@ -32,7 +32,7 @@ Ansible を使ってセットアップを行うと楽。
 注意）ansible_provision.yml は LLVM7 をデフォルトに設定する。これは Ubuntu の alternatives という仕組みを使い、/usr/bin 以下にリンクを張ることで実現する。
 
     $ sudo apt install ansible
-    $ cd $HOME/EUFI-OS-build/OS/devenv
+    $ cd $HOME/UEFI-OS-build/OS/devenv
     $ ansible-playbook -K -i ansible_inventory ansible_provision.yml
 
 セットアップが上手くいけば `iasl` というコマンドがインストールされ，`$HOME/edk2` というディレクトリが生成されている。
@@ -76,7 +76,7 @@ Ansible を使ってセットアップを行うと楽。
 
 Git で入手。
 
-    $ git clone https://github.com/murata0531/EUFI-OS.git
+    $ git clone https://github.com/murata0531/UEFI-OS.git
 
 最後の `git clone` によって、カレントディレクトリに EUFI-OS ディレクトリが生成され、そこに OS のソースコードがダウンロードされる。
 
@@ -85,12 +85,12 @@ Git で入手。
 EDK II のディレクトリに EUFI-OSブートローダーのディレクトリをリンクする。
 
     $ cd $HOME/edk2
-    $ ln -s /path/to/EUFI-OS/OSLoaderPkg ./
+    $ ln -s /path/to/UEFI-OS/OSLoaderPkg ./
 
-`/path/to/EUFI-OS` は先ほど `git clone` でダウンロードした EUFI-OSディレクトリへのパスを指定する。
+`/path/to/EUFI-OS` は先ほど `git clone` でダウンロードした UEFI-OSディレクトリへのパスを指定する。
 ブートローダーのソースコードが正しく見られたらリンク成功。
 
-    $ ls OSLoaderPkg/Main.c
+    $ ls MikanLoaderPkg/Main.c
 
 次に，`edksetup.sh` を読み込むことで EDK II のビルドに必要な環境変数を設定する。
 
@@ -101,7 +101,7 @@ EDK II のディレクトリに EUFI-OSブートローダーのディレクト�
 
 | 設定項目        | 設定値                            |
 |-----------------|-----------------------------------|
-| ACTIVE_PLATFORM | OSLoaderPkg/OSLoaderPkg.dsc |
+| ACTIVE_PLATFORM | MikanLoaderPkg/MikanLoaderPkg.dsc |
 | TARGET          | DEBUG                             |
 | TARGET_ARCH     | X64                               |
 | TOOL_CHAIN_TAG  | CLANG38                           |
@@ -114,17 +114,17 @@ EDK II のディレクトリに EUFI-OSブートローダーのディレクト�
 
 Loader.efi ファイルが出力されていればビルド成功。
 
-    $ ls Build/OSLoaderX64/DEBUG_CLANG38/X64/Loader.efi
+    $ ls Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi
 
 ## OS のビルド
 
 ビルドに必要な環境変数を読み込む。
 
-    $ source $HOME/OS/devenv/buildenv.sh
+    $ source $HOME/osbook/devenv/buildenv.sh
 
 ビルドする。
 
-    $ cd /path/to/EUFI-OS
+    $ cd /path/to/UEFI-OS
     $ ./build.sh
 
 QEMU で起動するには `./build.sh` に `run` オプションを指定。
