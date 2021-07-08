@@ -7,7 +7,7 @@ if [ ! -d $BASEDIR ]
 then
     echo "$BASEDIR が存在しません。"
     echo "以下のファイルを手動でダウンロードし、$(dirname $BASEDIR)に展開してください。"
-    echo "https://github.com/uchan-nos/mikanos-build/releases/download/v2.0/x86_64-elf.tar.gz "
+    echo "https://github.com/murata0531/UEFI-OS-build/releases/download/x86_64-elf_v1/x86_64-elf.tar.gz"
 else
     export CPPFLAGS="\
     -I$BASEDIR/include/c++/v1 -I$BASEDIR/include -I$BASEDIR/include/freetype2 \
