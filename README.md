@@ -32,7 +32,7 @@ Ansible を使ってセットアップを行うと楽。
 注意）ansible_provision.yml は LLVM7 をデフォルトに設定する。これは Ubuntu の alternatives という仕組みを使い、/usr/bin 以下にリンクを張ることで実現する。
 
     $ sudo apt install ansible
-    $ cd $HOME/UEFI-OS-build/OS/devenv
+    $ cd $HOME/osbook/devenv
     $ ansible-playbook -K -i ansible_inventory ansible_provision.yml
 
 セットアップが上手くいけば `iasl` というコマンドがインストールされ，`$HOME/edk2` というディレクトリが生成されている。
@@ -85,7 +85,7 @@ Git で入手。
 EDK II のディレクトリに EUFI-OSブートローダーのディレクトリをリンクする。
 
     $ cd $HOME/edk2
-    $ ln -s /path/to/UEFI-OS/OSLoaderPkg ./
+    $ ln -s /path/to/UEFI-OS/MikanLoaderPkg ./
 
 `/path/to/EUFI-OS` は先ほど `git clone` でダウンロードした UEFI-OSディレクトリへのパスを指定する。
 ブートローダーのソースコードが正しく見られたらリンク成功。
