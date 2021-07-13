@@ -23,6 +23,8 @@ Ubuntu 20.04(Virtual Box上)
     $ cd $HOME
     $ git clone https://github.com/murata0531/UEFI-OS-build.git　osbook
 
+(余談) ansible playbookに準えてosbookと命名している
+
 ### 開発ツールの導入
 
 次に Clang，Nasm といった開発ツールや，EDK IIのセットアップを行う。
