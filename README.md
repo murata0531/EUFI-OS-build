@@ -1,4 +1,4 @@
-# EUFI-OS-build
+# UEFI-OS-build
 
 
 Ubuntu 20.04(Virtual Box上)
