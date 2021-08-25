@@ -58,7 +58,7 @@ Ansible を使ってセットアップを行うと楽。
     x86_64-elf/include/
         c++/ を除くすべて
 
-次のファイル群は libc++ 由来です。ライセンスは `x86_64-elf/LICENSE.libcxx` を参照。
+次のファイル群は libc++ 由来。ライセンスは `x86_64-elf/LICENSE.libcxx` を参照。
 
     x86_64-elf/lib/
         libc++.a
@@ -127,11 +127,11 @@ Loader.efi ファイルが出力されていればビルド成功。
 ビルドする。
 
     $ cd /path/to/UEFI-OS
-    $ ./build.sh
+    $ source build.sh
 
 QEMU で起動するには `./build.sh` に `run` オプションを指定。
 
-    $ ./build.sh run
+    $ source build.sh run
 
 apps ディレクトリにアプリ群を入れ、フォントなどのリソースをも含めたディスクイメージを作るには APPS_DIR と RESOURCE_DIR 変数を指定。
 
