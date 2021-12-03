@@ -84,7 +84,7 @@ Git で入手。
 
 ## ブートローダーのビルド
 
-EDK II のディレクトリに EUFI-OSブートローダーのディレクトリをリンクする。
+EDK II のディレクトリに UEFI-OSブートローダーのディレクトリをリンクする。
 
     $ cd $HOME/edk2
     $ ln -s /path/to/UEFI-OS/MikanLoaderPkg ./
