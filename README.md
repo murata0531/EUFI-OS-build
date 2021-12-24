@@ -3,6 +3,10 @@
 
 Ubuntu 20.04(Virtual Box上)
 
+## OSについての基礎知識
+
+https://hackmd.io/imuvwGTJQ3-3YkBT0Zh4Qw
+
 ビルド手順
 
 1. ビルド環境の構築
